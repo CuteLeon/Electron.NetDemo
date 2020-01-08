@@ -60,7 +60,11 @@ electronize start
 
 > 调试菜单栏含有“全部拆离”和“重新附加到进程”菜单项，便于灵活调试；
 
+## 生成项目：
 
+​	打开 cmd，cd 进入项目所在目录 （*.csproj 文件所在目录）
 
-
+```
+electronize build /target win
+```
 
