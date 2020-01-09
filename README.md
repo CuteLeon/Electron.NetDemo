@@ -19,7 +19,7 @@ Asp.Net Core 3.0 MVC
 
 ## 初始化项目：
 
-​	打开 cmd，cd 进入项目所在目录（*.csproj 文件所在目录）
+​	打开 cmd，cd 进入项目所在目录（*.csproj 文件所在目录），或直接在 Visual Studio 的 程序包管理器控制台 中执行：
 
 ```
 electronize init
@@ -31,7 +31,7 @@ electronize init
 
 ### 方案一：
 
-​	打开 cmd，cd 进入项目所在目录 （*.csproj 文件所在目录）
+​	打开 cmd，cd 进入项目所在目录（*.csproj 文件所在目录），或直接在 Visual Studio 的 程序包管理器控制台 中执行：
 
 ```
 electronize start
@@ -62,9 +62,18 @@ electronize start
 
 ## 生成项目：
 
-​	打开 cmd，cd 进入项目所在目录 （*.csproj 文件所在目录）
+​	打开 cmd，cd 进入项目所在目录（*.csproj 文件所在目录），或直接在 Visual Studio 的 程序包管理器控制台 中执行：
 
 ```
 electronize build /target win
 ```
 
+> 生成期间，会从GitHub下载多个包，会因国内网络而特别慢。解决方案：预先下载其中较大的包 [electron-v7.1.7-win32-x64.zip](https://github.com/electron/electron/releases/download/v7.1.7/electron-v7.1.7-win32-x64.zip) （注意版本号可能会更新，可以从控制台获取真实的下载地址），将下载的包放到 C:\Users\{用户名}\AppData\Local\electron\Cache 目录下。
+
+​	此时项目目录下的 bin\Desktop 目录下即出现了程序的安装包文件（"{项目名称} Setup {版本号}.exe"）;
+
+ bin\Desktop\win-unpacked 目录下出现了一个 exe 文件，可以直接启动 Electron.NET 程序；
+
+
+
+> 更多 Electronize 的命令，可以使用 electronize /help 或 electronize help (start|build|init|...) 获取帮助；
