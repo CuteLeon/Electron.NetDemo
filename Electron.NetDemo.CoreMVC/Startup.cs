@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ElectronNET.API;
+using ElectronNET.API.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -53,8 +54,44 @@ namespace Electron.NetDemo.CoreMVC
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-            
-            Task.Run(async () => await ElectronNET.API.Electron.WindowManager.CreateWindowAsync());
+
+            Task.Run(async () => await ElectronNET.API.Electron.WindowManager.CreateWindowAsync(new BrowserWindowOptions()
+            {
+                AlwaysOnTop = false,
+                AutoHideMenuBar = true,
+                AcceptFirstMouse = false,
+                BackgroundColor = "#F00",
+                Center = true,
+                Closable = false,
+                DarkTheme = false,
+                DisableAutoHideCursor = false,
+                EnableLargerThanScreen = false,
+                Focusable = true,
+                Fullscreen = true,
+                Fullscreenable = true,
+                FullscreenWindowTitle = false,
+                HasShadow = true,
+                Icon = null,
+                Kiosk = true,
+                Maximizable = true,
+                Minimizable = true,
+                Modal = false,
+                Movable = true,
+                Resizable = true,
+                SkipTaskbar = false,
+                TabbingIdentifier = "CustomeTabbingIdentifier",
+                Show = true,
+                ThickFrame = true,
+                Title = "ElectronNET ÑÝÊ¾ÏîÄ¿",
+                TitleBarStyle = TitleBarStyle.defaultStyle,
+                Transparent = true,
+                UseContentSize = false,
+                Vibrancy = Vibrancy.dark,
+                WebPreferences = new WebPreferences()
+                {
+                    DevTools = true,
+                }
+            }));
         }
     }
 }
